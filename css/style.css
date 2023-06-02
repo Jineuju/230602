@@ -1,0 +1,105 @@
+@charset "utf-8";
+*{margin: 0px; padding: 0px; box-sizing: border-box;}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+section.two{
+    background-color: #292929;
+}
+.block{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: aliceblue;
+}
+.box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: calc(100% - 50px);
+    height: calc(100% - 50px);
+    border-radius: 50%;
+    background-color: indigo;
+}
+.box::before{
+    position: absolute;
+    content: "";
+    width: calc(100% + 28px);
+    height: calc(100% + 28px);
+    border-radius: 50%;
+    border: 1px solid #0000ff;
+}
+.box .number span{
+    color: #e9e9e9;
+}
+.box .number .num{
+    font-size: 35px;
+    font-weight: bold;
+}
+.box .number .sub{
+    font-size: 20px;
+}
+.box .title{
+    font-size: 15px;
+    color: #e9e9e9;
+}
+.dots{
+    display: block;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: transform 2s, opacity 2s ease;
+    /* transform: rotate(30deg); */
+}
+.dots::after{
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background-color: red;
+}
+.svg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    fill: none;
+    transform: rotate(-90deg);
+}
+.circle{
+    stroke: url(#gradientStyle);
+    stroke-width: 4px;
+    stroke-dasharray: 503;
+    stroke-dashoffset: 503;
+    transition: stroke-dashoffset 2s;
+
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+/*
+src = 주소로 가지고오는 리소스를 직접 로드하고(가져오고) 싶을때 사용한다
+href = 다른 대상을 위해 이 리소스를 참조하고싶을때 사용한다
+url = 스크립트에서 변수로 사용할 때 사용한다
+
+css에서 사용하는 방법은 항상 url을 사용한다
+html에서 태그 및 a, link이런 친구들은 href를 사용하고
+링크(속성)가 아닌 경우 리소스를 설정하는 것은 src이다
+*/
+
